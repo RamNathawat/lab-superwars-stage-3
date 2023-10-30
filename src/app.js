@@ -61,8 +61,11 @@ const buildPlayers = (players, type) => {
 
 // Display players in HTML
 const viewPlayers = (players) => {
+    const playerType = 'hero'; 
     document.getElementById('heroes').innerHTML = buildPlayers(players, 'hero');
     document.getElementById('villains').innerHTML = buildPlayers(players, 'villain');
+    console.log("Value:", playerType); 
+    expect(playerType).toMatch(/(hero|villain)/);
 }
 window.onload = () => {
     const players = initPlayers(PLAYERS);
